@@ -34,7 +34,10 @@ for edge in edges:
     # Store the antiparallel edge too:
 	network.connect(v,u,LpVariable(str(v) + "_to_" + str(u),lower,upper))
 	# Store a cost constraint if the edge leaves the internal network
-	if u in external_relays or v in external_relays:
+	if u in external_relays and v not in external_relays:
+		cost_network.connect(u,v,1)
+		cost_network.connect(v,u,1)
+	elif: v in external_relays and u not in external_relays:
 		cost_network.connect(u,v,1)
 		cost_network.connect(v,u,1)
 	else: # All internal connections must be free (zero cost)
