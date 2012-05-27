@@ -126,6 +126,8 @@ public class BranchAndBound_TSP {
 
 		//TODO: See assignment text
 		
+                // Circle radius based lower bound
+                
 		return 0;
 	}
 	
